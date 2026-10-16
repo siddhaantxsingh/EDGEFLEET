@@ -1,0 +1,38 @@
+## baseline (no mutation)
+ok  	edgefleet/internal/proto	0.024s
+ok  	edgefleet/internal/server	(cached)
+## M1: no version-rollback check
+    keyset_test.go:76: rollback to v1: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.014s
+    keyset_test.go:167: PUT v1 after v2 (rollback): 200
+## M2: no revocation check in VerifyRelease
+    keyset_test.go:70: revoked k1: release key not in the trusted key set: "k1"
+FAIL
+FAIL	edgefleet/internal/proto	0.016s
+ok  	edgefleet/internal/server	(cached)
+## M3: no expiry check in VerifyRelease
+    keyset_test.go:98: release under expired set: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.009s
+ok  	edgefleet/internal/server	(cached)
+## M4: no expiry check on key sets
+    keyset_test.go:102: expired v3: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.044s
+ok  	edgefleet/internal/server	(cached)
+## M5: revocations not sticky
+    keyset_test.go:85: un-revoking k1: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.029s
+    keyset_test.go:171: PUT key set that re-authorises revoked k1: 200
+## M6: equal-version conflict not detected
+    keyset_test.go:91: conflicting v2: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.017s
+ok  	edgefleet/internal/server	(cached)
+## M7: root signature not checked
+    keyset_test.go:124: forged: <nil>
+FAIL
+FAIL	edgefleet/internal/proto	0.026s
+ok  	edgefleet/internal/server	0.564s

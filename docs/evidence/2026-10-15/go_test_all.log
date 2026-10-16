@@ -1,0 +1,14 @@
+ 23:01:32 up 9 min,  0 user,  load average: 16.86, 12.70, 6.23
+?   	edgefleet/cmd/fleet-agent	[no test files]
+?   	edgefleet/cmd/fleetctl	[no test files]
+?   	edgefleet/cmd/fleetd	[no test files]
+?   	edgefleet/cmd/fleetsim	[no test files]
+ok  	edgefleet/e2e	19.605s
+?   	edgefleet/internal/agent	[no test files]
+ok  	edgefleet/internal/proto	0.049s
+ok  	edgefleet/internal/rollout	0.296s
+ok  	edgefleet/internal/server	32.573s
+ok  	edgefleet/internal/store	14.955s
+VET_OK
+gofmt files: 0
+DONE

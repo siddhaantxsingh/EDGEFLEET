@@ -1,0 +1,71 @@
+{
+ "artifact_kb": 256,
+ "cpus": 4,
+ "devices": 2000,
+ "enroll_seconds": 2.049561758,
+ "heap_mb": 69.231432,
+ "heartbeat_interval_s": 1,
+ "journal_bytes": 1458676,
+ "note": "control plane and all simulated devices share one process and the same 4 vCPUs",
+ "scenarios": [
+  {
+   "name": "good release",
+   "seconds": 10.407160232,
+   "final_state": "completed",
+   "versions": {
+    "2.0": 2000
+   },
+   "succeeded": 2000,
+   "failed": 0,
+   "devices_that_tried_it": 2000,
+   "heartbeats_per_sec": 1829.0292044770354,
+   "heartbeat_latency_ms": {
+    "max": 1275.438,
+    "p50": 1.041,
+    "p95": 632.912,
+    "p99": 904.719
+   },
+   "cpu_cores": 1.4999288616698987
+  },
+  {
+   "name": "bad release (all trials fail)",
+   "seconds": 1.412685617,
+   "final_state": "halted",
+   "versions": {
+    "2.0": 2000
+   },
+   "succeeded": 0,
+   "failed": 3,
+   "devices_that_tried_it": 15,
+   "heartbeats_per_sec": 1768.2632072837193,
+   "heartbeat_latency_ms": {
+    "max": 24.159,
+    "p50": 0.397,
+    "p95": 8.601,
+    "p99": 17.435
+   },
+   "cpu_cores": 0.6866354327723002,
+   "reason": "wave 0: 2 of 2 reporting devices failed (limit 10%)"
+  },
+  {
+   "name": "flaky release (3% failures, 10% limit)",
+   "seconds": 9.97639287,
+   "final_state": "completed",
+   "versions": {
+    "2.0": 46,
+    "4.0": 1954
+   },
+   "succeeded": 1954,
+   "failed": 46,
+   "devices_that_tried_it": 2000,
+   "heartbeats_per_sec": 1741.711681408553,
+   "heartbeat_latency_ms": {
+    "max": 1689.174,
+    "p50": 3.701,
+    "p95": 932.942,
+    "p99": 1435.602
+   },
+   "cpu_cores": 1.5546701299865713
+  }
+ ]
+}

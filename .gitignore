@@ -1,0 +1,6 @@
+/fleetd
+/fleet-agent
+/fleetctl
+/fleetsim
+*.key
+fleet-data/
